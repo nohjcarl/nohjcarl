@@ -61,9 +61,9 @@ const contactForm = document.getElementById('contactForm');
 const contactClear = document.getElementById('contactClear');
 
 // Replace these placeholders with your EmailJS values
-const EMAILJS_USER_ID = 'YOUR_EMAILJS_PUBLIC_KEY';
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID';
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+const EMAILJS_USER_ID = '51C_cA0zsEDwxIdB0';
+const EMAILJS_SERVICE_ID = 'service_ekzhbgs';
+const EMAILJS_TEMPLATE_ID = 'template_x86e87p';
 
 if (window.emailjs) {
   try {
