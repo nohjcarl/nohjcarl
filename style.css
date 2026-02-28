@@ -19,7 +19,12 @@ body.dark {
   padding: 0;
   box-sizing: border-box;
   font-family: Arial;
-  scroll-behavior: smooth;
+  /* anchor scrolling smooth only via JS if needed; native scrolling can feel janky on some mobiles */
+}
+
+html, body {
+  overflow-x: hidden; /* prevent horizontal flicker */
+  -webkit-overflow-scrolling: touch; /* enable momentum scrolling on iOS */
 }
 
 body {
@@ -28,12 +33,12 @@ body {
   padding-top: var(--nav-height);
 }
 
-/* ensure anchor scrolling accounts for fixed nav */
+
 html {
   scroll-padding-top: var(--nav-height);
 }
 
-/* NAV */
+
 nav {
   position: fixed;
   top: 0;
@@ -64,7 +69,7 @@ nav li a:hover {
   color: var(--primary);
 }
 
-/* Mobile nav toggle */
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -97,7 +102,7 @@ nav li a:hover {
   transform: rotate(-45deg) translateY(-12px);
 }
 
-/* Mobile responsive nav */
+
 @media (max-width: 768px) {
   html, body {
     overflow-x: hidden;
@@ -167,7 +172,7 @@ nav li a:hover {
   border-radius: 6px;
 }
 
-/* CTA Button Styling */
+
 .btn-download {
   display: inline-flex;
   align-items: center;
@@ -245,7 +250,7 @@ nav li a:hover {
   }
 }
 
-/* CV link inside hero */
+
 .cv-link {
   display: inline-block;
   margin-top: 16px;
@@ -271,7 +276,7 @@ nav li a:hover {
   position: relative;
 }
 
-/* HERO */
+
 .hero {
   min-height: calc(100vh - var(--nav-height));
   display: flex;
@@ -303,7 +308,7 @@ nav li a:hover {
   animation: pulseGlow 2.5s ease-in-out infinite;
 }
 
-/* profile interaction + ring */
+
 .hero-image {
   position: relative;
   display: flex;
@@ -328,7 +333,7 @@ nav li a:hover {
   opacity: 1;
 }
 
-/* decorative halo and ring behind the portrait */
+
 .hero-image::before {
   content: "";
   position: absolute;
@@ -366,7 +371,7 @@ nav li a:hover {
   color: var(--primary);
 }
 
-/* HERO TYPOGRAPHY & ANIMATIONS */
+
 .hero-content h1{
   font-size: clamp(2.5rem, 6vw, 4rem);
   line-height: 1.05;
@@ -405,7 +410,7 @@ nav li a:hover {
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* Responsive: stack image under text on small screens */
+
 @media (max-width: 880px) {
   .hero {
     flex-direction: column-reverse;
@@ -429,14 +434,14 @@ nav li a:hover {
   .hero-content p { font-size: 0.98rem; }
 }
 
-/* extra-large screens: make portrait more prominent */
+
 @media (min-width:1200px) {
   .profile-pic { width: 320px; height: 320px; }
   .hero-image::before { width: 420px; height: 420px; filter: blur(28px); }
   .hero-image::after { width: 380px; height: 380px; }
 }
 
-/* SECTIONS */
+
 section {
   padding: 80px 10%;
   scroll-margin-top: calc(var(--nav-height) + 12px);
@@ -573,7 +578,7 @@ section p a:hover {
   }
 }
 
-/* TECH STACK SECTION */
+
 .tech-stack {
   margin-top: 60px;
   padding-top: 40px;
@@ -730,7 +735,7 @@ section p a:hover {
   color: var(--primary);
 }
 
-/* Grid stagger animation */
+
 .grid {
   display: grid;
   gap: 20px;
@@ -749,7 +754,7 @@ section p a:hover {
 .grid .card:nth-child(4) { animation-delay: 0.4s; }
 .grid .card:nth-child(5) { animation-delay: 0.5s; }
 
-/* Project links styling */
+
 .project-links {
   display: flex;
   gap: 12px;
@@ -834,7 +839,7 @@ section p a:hover {
   }
 }
 
-/* GALLERY */
+
 .gallery {
   display: grid;
   gap: 15px;
@@ -853,7 +858,7 @@ section p a:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-/* MODAL */
+
 .modal {
   display: none;
   position: fixed;
@@ -932,7 +937,7 @@ section p a:hover {
   }
 }
 
-/* PROJECTS SLIDESHOW */
+
 .projects-slideshow {
   position: relative;
   max-width: 1000px;
@@ -999,7 +1004,7 @@ section p a:hover {
   margin-bottom: 20px;
 }
 
-/* Slide Navigation Buttons */
+
 .slide-btn {
   position: absolute;
   top: 50%;
@@ -1034,7 +1039,7 @@ section p a:hover {
   right: -70px;
 }
 
-/* Dot Indicators */
+
 .slide-dots {
   display: flex;
   justify-content: center;
@@ -1097,7 +1102,7 @@ section p a:hover {
   }
 }
 
-/* ANIMATION */
+
 @keyframes slideInLeft {
   from {
     opacity: 0;
@@ -1160,7 +1165,7 @@ section p a:hover {
   transform: translateY(0);
 }
 
-/* FOOTER */
+
 footer {
   background: var(--card);
   text-align: center;
@@ -1179,7 +1184,7 @@ footer {
   }
 }
 
-/* CONTACT */
+
 .contact-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1216,7 +1221,7 @@ footer {
   text-decoration: none;
 }
 
-/* Align contact social icons */
+
 .contact-social {
   display: flex;
   align-items: center;

@@ -1,7 +1,4 @@
-// ===== Dark Mode (Always On) =====
-// Dark mode is enabled by default - no toggle needed
 
-// ===== Mobile Menu Toggle =====
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
@@ -10,7 +7,7 @@ menuToggle.addEventListener("click", () => {
   menuToggle.classList.toggle("active");
 });
 
-// Close menu when a link is clicked
+
 document.querySelectorAll("#navMenu a").forEach(link => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("active");
@@ -18,7 +15,7 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   });
 });
 
-// Close menu when clicking outside
+
 document.addEventListener("click", (e) => {
   if (!e.target.closest("nav")) {
     navMenu.classList.remove("active");
@@ -26,7 +23,7 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// ===== Scroll Animation =====
+
 const faders = document.querySelectorAll(".fade");
 
 const observer = new IntersectionObserver(entries => {
@@ -40,7 +37,7 @@ const observer = new IntersectionObserver(entries => {
 faders.forEach(el => observer.observe(el));
 
 
-// ===== Image Modal Gallery =====
+
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modalImg");
 const closeBtn = document.getElementById("close");
@@ -56,11 +53,11 @@ closeBtn.onclick = () => {
   modal.style.display = "none";
 };
 
-// ===== Contact Form Handling (EmailJS) =====
+
 const contactForm = document.getElementById('contactForm');
 const contactClear = document.getElementById('contactClear');
 
-// Replace these placeholders with your EmailJS values
+
 const EMAILJS_USER_ID = '51C_cA0zsEDwxIdB0';
 const EMAILJS_SERVICE_ID = 'service_ekzhbgs';
 const EMAILJS_TEMPLATE_ID = 'template_x86e87p';
@@ -92,7 +89,7 @@ if (contactForm) {
       message: message
     };
 
-    // Send via EmailJS
+    
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
       .then(() => {
         alert('Message sent — thank you!');
@@ -114,7 +111,7 @@ if (contactClear) {
   });
 }
 
-// ===== Project Slideshow =====
+
 let currentSlideIndex = 1;
 let slideAutoPlayInterval;
 
@@ -158,13 +155,13 @@ function autoPlaySlides() {
   slideAutoPlayInterval = setInterval(() => {
     currentSlideIndex++;
     showSlides(currentSlideIndex);
-  }, 5000); // Change slide every 5 seconds
+  }, 5000); 
 }
 
-// Initialize slideshow on page load
+
 if (document.querySelectorAll(".project-slide").length > 0) {
   showSlides(currentSlideIndex);
   autoPlaySlides();
 }
 
-// ===== Image Modal Gallery =====
+
