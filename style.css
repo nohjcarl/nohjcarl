@@ -254,25 +254,22 @@ nav li a:hover {
 .cv-link {
   display: inline-block;
   margin-top: 16px;
-  padding: 10px 24px;
+  padding: 8px 20px;
   color: var(--text);
   text-decoration: none;
   font-weight: 600;
   border: 2px solid var(--primary);
-  transition: all 0.35s cubic-bezier(.2,.9,.3,1);
+  transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(37,99,235,0.3);
 }
 
-.cv-link:hover,
-.cv-link:focus-visible {
-  color: white;
-  background: rgba(37,99,235,0.2);
-  box-shadow: 0 0 25px rgba(37,99,235,0.7), 0 0 40px rgba(37,99,235,0.3);
-  transform: translateY(-3px);
+.cv-link:hover {
+  color: var(--primary);
+  box-shadow: 0 0 20px rgba(37,99,235,0.6);
 }
 
 .cv-link:active {
-  transform: scale(0.97);
+  transform: scale(0.98);
 }
 
 .hero {
@@ -399,12 +396,6 @@ nav li a:hover {
   letter-spacing: -1px;
   text-align: center;
   animation: textPop 0.9s cubic-bezier(.2,.9,.3,1) both;
-  transition: text-shadow 0.4s ease;
-}
-
-.hero-content h1:hover,
-.hero-content h1:focus-visible {
-  text-shadow: 0 0 20px rgba(37,99,235,0.5), 0 0 40px rgba(37,99,235,0.3);
 }
 
 .hero-content p{

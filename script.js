@@ -62,12 +62,21 @@ const EMAILJS_USER_ID = '51C_cA0zsEDwxIdB0';
 const EMAILJS_SERVICE_ID = 'service_ekzhbgs';
 const EMAILJS_TEMPLATE_ID = 'template_x86e87p';
 
+console.log('=== EmailJS Configuration ===');
+console.log('User ID (Public Key):', EMAILJS_USER_ID);
+console.log('Service ID:', EMAILJS_SERVICE_ID);
+console.log('Template ID:', EMAILJS_TEMPLATE_ID);
+console.log('EmailJS loaded?', typeof emailjs !== 'undefined');
+
 if (window.emailjs) {
   try {
     emailjs.init(EMAILJS_USER_ID);
+    console.log('✓ EmailJS initialized successfully');
   } catch (err) {
-    console.warn('EmailJS init error', err);
+    console.error('❌ EmailJS init error:', err);
   }
+} else {
+  console.error('❌ CRITICAL: EmailJS SDK not loaded! Check script tag in HTML.');
 }
 
 if (contactForm) {
@@ -77,6 +86,18 @@ if (contactForm) {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) {
+      alert('Please fill in all fields.');
+      return;
+    }
+
+    // DEBUG: Check if emailjs is available
+    if (typeof emailjs === 'undefined') {
+      alert('❌ ERROR: EmailJS SDK not loaded!\n\nMake sure the EmailJS script tag is in index.html before script.js');
+      console.error('emailjs is undefined!');
+      return;
+    }
 
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
@@ -89,16 +110,58 @@ if (contactForm) {
       message: message
     };
 
-    
+    console.log('📧 Attempting to send...');
+    console.log('Service ID:', EMAILJS_SERVICE_ID);
+    console.log('Template ID:', EMAILJS_TEMPLATE_ID);
+    console.log('Params:', templateParams);
+
+    // 15-second timeout
+    const timeoutId = setTimeout(() => {
+      console.error('❌ No response from EmailJS after 15 seconds');
+      const diagnose = `
+❌ EMAIL SEND TIMEOUT
+
+Possible causes:
+1. Public Key (User ID) is WRONG: ${EMAILJS_USER_ID}
+2. Service ID is WRONG: ${EMAILJS_SERVICE_ID}
+3. Template ID is WRONG or UNPUBLISHED: ${EMAILJS_TEMPLATE_ID}
+4. Template "To Email" not configured to: jc15ayuda@gmail.com
+
+ACTION: Log into EmailJS Dashboard and verify all IDs match.
+Then copy-paste the console logs here for diagnosis.
+      `;
+      alert(diagnose);
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    }, 15000);
+
     emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
-      .then(() => {
-        alert('Message sent — thank you!');
+      .then((response) => {
+        clearTimeout(timeoutId);
+        console.log('✓ SUCCESS! Email sent!', response);
+        alert('✓ Message sent to jc15ayuda@gmail.com — thank you!');
         contactForm.reset();
-      }, (error) => {
-        console.error('EmailJS error:', error);
-        alert('Sorry — sending failed. Please try again or email directly.');
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
       })
-      .finally(() => {
+      .catch((error) => {
+        clearTimeout(timeoutId);
+        console.error('❌ EmailJS returned an error:', error);
+        const errorMsg = error.text || error.message || JSON.stringify(error);
+        const fullMsg = `
+❌ EMAILJS ERROR
+
+Message: ${errorMsg}
+
+Config being used:
+- Service ID: ${EMAILJS_SERVICE_ID}
+- Template ID: ${EMAILJS_TEMPLATE_ID}
+- Public Key: ${EMAILJS_USER_ID}
+
+Copy this entire message and share it for diagnosis.
+        `;
+        alert(fullMsg);
+        console.error('Full error object:', error);
         submitBtn.disabled = false;
         submitBtn.textContent = originalText;
       });
