@@ -1280,7 +1280,7 @@ footer {
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: none;
   background: rgba(255,255,255,0.02);
   color: var(--text);
   font-size: 0.95em;
@@ -1334,3 +1334,33 @@ footer {
     gap: 20px;
   }
 }
+
+/* mute button styling ------------------------------------------------------------------ */
+.mute-btn {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 50%;
+  background: transparent; /* keep background transparent */
+  color: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.18s ease, transform 0.12s ease, color 0.18s ease;
+  backdrop-filter: blur(6px); /* subtle glass effect if supported */
+}
+.mute-btn:hover {
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,1);
+  transform: translateY(-2px);
+}
+.mute-btn:active {
+  transform: translateY(0);
+}
+
+/* icon swap handled by script - keep original color */

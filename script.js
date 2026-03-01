@@ -195,6 +195,38 @@ if (contactClear) {
   window.addEventListener('scroll', unlock, { once: true, passive: true });
 })();
 
+// mute/unmute toggle: switch button icon and audio state
+(function() {
+  const bg = document.getElementById('bgMusic');
+  const btn = document.getElementById('muteBtn');
+  if (!bg || !btn) return;
+
+  const updateButton = () => {
+    const icon = btn.querySelector('i');
+    if (bg.muted) {
+      icon.classList.remove('fa-volume-up');
+      icon.classList.add('fa-volume-mute');
+      btn.setAttribute('aria-label', 'Unmute background music');
+    } else {
+      icon.classList.remove('fa-volume-mute');
+      icon.classList.add('fa-volume-up');
+      btn.setAttribute('aria-label', 'Mute background music');
+    }
+  };
+
+  btn.addEventListener('click', () => {
+    bg.muted = !bg.muted;
+    // ensure music plays when unmuted
+    if (!bg.muted && bg.paused) {
+      bg.play().catch(() => {});
+    }
+    updateButton();
+  });
+
+  // initialize icon state
+  updateButton();
+})();
+
 
 let currentSlideIndex = 1;
 let slideAutoPlayInterval;
