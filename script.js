@@ -92,7 +92,7 @@ if (contactForm) {
       return;
     }
 
-    // DEBUG: Check if emailjs is available
+    
     if (typeof emailjs === 'undefined') {
       alert('❌ ERROR: EmailJS SDK not loaded!\n\nMake sure the EmailJS script tag is in index.html before script.js');
       console.error('emailjs is undefined!');
@@ -115,7 +115,7 @@ if (contactForm) {
     console.log('Template ID:', EMAILJS_TEMPLATE_ID);
     console.log('Params:', templateParams);
 
-    // 15-second timeout
+    
     const timeoutId = setTimeout(() => {
       console.error('❌ No response from EmailJS after 15 seconds');
       const diagnose = `
@@ -173,6 +173,27 @@ if (contactClear) {
     if (contactForm) contactForm.reset();
   });
 }
+
+// hidden play trigger: unmute and play background music on first user interaction
+(function() {
+  const bg = document.getElementById('bgMusic');
+  if (!bg) return;
+  const unlock = () => {
+    if (bg.paused) {
+      bg.play().catch(() => {}); // swallow should not be needed
+    }
+    bg.muted = false;
+    window.removeEventListener('click', unlock);
+    window.removeEventListener('keydown', unlock);
+    window.removeEventListener('touchstart', unlock);
+  };
+  window.addEventListener('click', unlock, { once: true });
+  window.addEventListener('keydown', unlock, { once: true });
+  window.addEventListener('touchstart', unlock, { once: true });
+  // also consider wheel and scroll as interactions
+  window.addEventListener('wheel', unlock, { once: true, passive: true });
+  window.addEventListener('scroll', unlock, { once: true, passive: true });
+})();
 
 
 let currentSlideIndex = 1;
