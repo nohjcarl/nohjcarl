@@ -1,0 +1,14 @@
+{
+  "owner": {
+    "username": "nohjcarl",
+    "email": "jc15ayuda@gmail.com"
+  },
+  "records": [
+    {
+      "type": "CNAME",
+      "name": "@",
+      "value": "nohjcarl.vercel.app",
+      "ttl": 3600
+    }
+  ]
+}
