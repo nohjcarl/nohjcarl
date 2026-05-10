@@ -441,7 +441,7 @@ nav li a:hover {
   .hero-content p {
     text-align: center;
   }
-  .profile-pic {
+  .hero-image .profile-pic {
     width: 220px;
     height: 220px;
   }
