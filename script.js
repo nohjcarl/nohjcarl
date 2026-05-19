@@ -53,6 +53,21 @@ closeBtn.onclick = () => {
   modal.style.display = "none";
 };
 
+const galleryTrack = document.querySelector('.gallery-scroll');
+const galleryPrevBtn = document.querySelector('.gallery-nav.prev');
+const galleryNextBtn = document.querySelector('.gallery-nav.next');
+
+if (galleryTrack && galleryPrevBtn && galleryNextBtn) {
+  const scrollStep = 320;
+
+  galleryPrevBtn.addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+  });
+
+  galleryNextBtn.addEventListener('click', () => {
+    galleryTrack.scrollBy({ left: scrollStep, behavior: 'smooth' });
+  });
+}
 
 const contactForm = document.getElementById('contactForm');
 const contactClear = document.getElementById('contactClear');
