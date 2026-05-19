@@ -309,6 +309,29 @@ nav li a:hover {
   max-width: 720px;
 }
 
+.hero-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px auto 0;
+  width: min(100%, 560px);
+  text-align: center;
+}
+
+.hero-links-label {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-links .contact-icons {
+  justify-content: center;
+}
+
 .hero-image {
   flex: 1;
   animation: slideInRight 0.8s ease-out;
@@ -1346,49 +1369,57 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  gap: 12px;
 }
 
 .contact-lead {
   color: var(--text);
   font-weight: 700;
   margin-bottom: 12px;
+  align-self: flex-start;
 }
 
-.contact-social a {
+.contact-meta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  margin-right: 8px;
+  width: 48px;
+  height: 48px;
   color: var(--text);
-  background: rgba(255,255,255,0.02);
-  border: 1px solid rgba(255,255,255,0.04);
   text-decoration: none;
+  border-radius: 16px;
+  background: transparent;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
+.contact-meta:hover {
+  background: rgba(37,99,235,0.16);
+  border-color: rgba(37,99,235,0.22);
+  transform: translateY(-2px);
+}
 
-.contact-social {
+.contact-meta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--primary);
+  font-size: 1rem;
+}
+
+.contact-icons {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 8px;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
 }
 
-.contact-info p {
-  margin: 6px 0;
-}
-
-.contact-social a:hover {
-  background: rgba(37,99,235,0.12);
-  color: var(--primary);
-  transform: translateY(-3px);
-}
-
-.contact-info {
-  display: flex;
-  flex-direction: column;
+.contact-info a {
+  margin: 0;
 }
 
 @media (max-width: 880px) {
