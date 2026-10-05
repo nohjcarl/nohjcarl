@@ -280,7 +280,7 @@ footer p{color:var(--muted);font-size:.88rem}
 /* MODAL with arrow navigation */
 .modal{
   display:none;position:fixed;inset:0;background:rgba(2,6,23,.93);z-index:2000;
-  align-items:center;justify-content:center;padding:70px 84px 64px;backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:70px 84px 64px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
 }
 .modal.open{display:flex}
 .modal-figure{margin:0;max-width:min(920px,88vw);text-align:center}
@@ -348,10 +348,11 @@ footer p{color:var(--muted);font-size:.88rem}
   width:250px;max-width:calc(100vw - 32px);
   background:#fff;border:2px solid #0B0F19;border-radius:12px;
   box-shadow:0 14px 40px rgba(0,0,0,.5);
-  padding:16px 14px 12px;
+  padding:14px 12px 10px;
   opacity:0;transform:translateY(8px) scale(.96);transform-origin:top left;
   transition:opacity .3s ease,transform .3s ease;
-  pointer-events:none;
+  pointer-events:none;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
 }
 .tour-card.game-box.show-bubble{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
 .game-name{
@@ -380,10 +381,6 @@ footer p{color:var(--muted);font-size:.88rem}
 .tour-card.game-box .tour-dots{display:flex;gap:5px;margin:0}
 .tour-card.game-box .tour-dots span{width:7px;height:7px;border-radius:50%;background:rgba(11,15,25,.18)}
 .tour-card.game-box .tour-dots span.on{background:var(--primary);transform:scale(1.2)}
-.tour-actions.game-actions{display:flex;gap:6px;margin-top:8px}
-.tour-actions.game-actions .btn{flex:1;justify-content:center;font-size:.75rem;padding:8px 10px}
-#tourSkip{flex:.7}
-.tour-remember{display:flex;align-items:center;gap:6px;margin-top:8px;font-size:.68rem;color:#64748B;cursor:pointer}
 .tour-target{border-radius:14px}
 #tourBtn{white-space:nowrap}
 
@@ -412,8 +409,8 @@ footer p{color:var(--muted);font-size:.88rem}
   .menu-toggle{display:flex}
   section{padding:64px 0}
   .grid-2,.grid-3,.grid-cert,.tech-grid{grid-template-columns:1fr}
-  .hero-stats{gap:22px}
-  .gallery-scroll{padding-left:48px;padding-right:48px}
+  .hero-stats{gap:22px;flex-wrap:wrap}
+  .gallery-scroll{padding-left:48px;padding-right:48px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
   .gallery-card{flex-basis:min(82vw,340px)}
   .footer-inner{flex-direction:column;text-align:center}
   .modal{padding:70px 12px 64px}
@@ -421,4 +418,39 @@ footer p{color:var(--muted);font-size:.88rem}
   .modal-nav:hover{transform:scale(1.06)}
   .modal-nav.prev{left:16px}
   .modal-nav.next{right:16px}
+  .badge-top{left:2px}.badge-bottom{right:2px}
+  .info-grid{grid-template-columns:1fr}
+}
+
+/* Small phones */
+@media(max-width:480px){
+  .container{padding:0 16px}
+  section{padding:52px 0}
+  .hero{padding-top:28px}
+  .hero-content h1{font-size:2.1rem}
+  .role{font-size:1rem}
+  .hero-actions .btn{flex:1 1 100%;justify-content:center}
+  .profile-pic{height:260px}
+  .profile-card{max-width:300px}
+  .gallery-card{flex-basis:78vw}
+  .gallery-card img{height:170px}
+  .tour-cursor{width:36px;height:36px;font-size:.85rem}
+  .tour-card.game-box{width:216px;padding:12px 10px 8px}
+  .game-text{font-size:.78rem !important;min-height:36px}
+  .modal-figure img{max-height:62vh}
+  #close{top:10px;right:12px;width:42px;height:42px;font-size:26px}
+}
+
+/* Big touch targets on touch devices */
+@media(pointer:coarse){
+  nav ul li a{padding:16px 4px}
+  .btn{min-height:44px}
+  .gallery-nav{width:48px;height:48px}
+}
+
+/* Respect reduced-motion settings (mobile battery + accessibility) */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+  .fade{opacity:1;transform:none}
 }

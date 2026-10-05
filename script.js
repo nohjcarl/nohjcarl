@@ -231,17 +231,12 @@
     var titleEl = document.getElementById('tourTitle');
     var textEl = document.getElementById('tourText');
     var dotsEl = document.getElementById('tourDots');
-    var btnNext = document.getElementById('tourNext');
-    var btnBack = document.getElementById('tourBack');
-    var btnSkip = document.getElementById('tourSkip');
-    var dontShow = document.getElementById('tourDontShow');
     var tourBtn = document.getElementById('tourBtn');
     if (!overlay || !spotlight || !cursor || !card) return;
 
     // Jhon speaks every line — short game-style sentences
     var steps = [
       { sel: '.hero-content', title: 'Welcome', text: "Hi I'm Jhon, welcome to my website!" },
-      { sel: '#profileMedia', title: 'Photo', text: "That's me! Hover my photo for a clip." },
       { sel: '#about', title: 'About', text: "IT student at Holy Cross of Davao College." },
       { sel: '#experience', title: 'Skills', text: "Websites, UI/UX in Figma, mobile + Firebase." },
       { sel: '#projects', title: 'Projects', text: "My builds — open any Live Demo!" },
@@ -290,6 +285,14 @@
           clearInterval(typeTimer);
           typeTimer = null;
           textEl.classList.add('done');
+          // bubble grew while typing — pull it back on-screen on small viewports
+          try {
+            var r = card.getBoundingClientRect();
+            if (r.bottom > window.innerHeight - 8) {
+              var cur = parseFloat(card.style.top) || 0;
+              card.style.top = Math.max(70, cur - (r.bottom - window.innerHeight + 12)) + 'px';
+            }
+          } catch (err) {}
           if (done) done();
         }
       }, TYPE_SPEED);
@@ -317,7 +320,7 @@
 
     // Bubble pops next to where the cursor points (never off-screen)
     function placeBubble(cx, cy) {
-      var w = 250, h = card.offsetHeight || 200;
+      var w = card.offsetWidth || 250, h = card.offsetHeight || 200;
       var left = cx + 24;
       if (left + w > window.innerWidth - 12) left = cx - w - 20;
       if (left < 8) left = 8;
@@ -345,8 +348,6 @@
       el.scrollIntoView({ behavior: 'smooth', block: 'center' });
       stepEl.textContent = 'Scene ' + (idx + 1) + ' / ' + steps.length;
       if (titleEl) titleEl.textContent = steps[idx].title;
-      btnBack.style.display = idx === 0 ? 'none' : '';
-      btnNext.innerHTML = idx === steps.length - 1 ? 'Finish ▶' : 'Next ▶';
       renderDots();
       setTimeout(function () {
         if (!active || myGen !== gen) return;
@@ -400,11 +401,10 @@
       markSeen();
     }
 
-    // Clicking the bubble completes the line instantly (game-style)
-    card.addEventListener('click', function (e) {
-      if (e.target.closest('button') || e.target.closest('input') || e.target.closest('label')) return;
+    // Tap the bubble to continue (game-style) — first tap completes the
+    // line, second tap moves on. Keyboard arrows work on desktop.
+    card.addEventListener('click', function () {
       if (typeTimer) {
-        // finish typing now, then hold before auto-advance
         var full = steps[idx].text;
         stopTypeOnly();
         if (autoTimer) clearTimeout(autoTimer);
@@ -417,13 +417,6 @@
       }
     });
 
-    if (btnNext) btnNext.addEventListener('click', function (e) {
-      e.stopPropagation();
-      if (idx >= steps.length - 1) finish();
-      else show(idx + 1);
-    });
-    if (btnBack) btnBack.addEventListener('click', function (e) { e.stopPropagation(); show(idx - 1); });
-    if (btnSkip) btnSkip.addEventListener('click', function (e) { e.stopPropagation(); finish(); });
     document.addEventListener('keydown', function (e) {
       if (!active) return;
       if (e.key === 'Escape') finish();
@@ -448,7 +441,6 @@
     } else if (!seen) {
       setTimeout(function () { start(true); }, 900);
     }
-    void dontShow;
   })();
 
   // Footer year + back to top
