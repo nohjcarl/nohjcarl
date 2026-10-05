@@ -245,7 +245,6 @@
       { sel: '#contactForm', title: 'Contact', text: "That's the tour! Message me here." }
     ];
 
-    var KEY = 'jc_tour_done_v1';
     var idx = 0;
     var active = false;
     var typeTimer = null;
@@ -309,10 +308,6 @@
 
     var gen = 0;
     var CURSOR_TRAVEL = 850;
-
-    function markSeen() {
-      try { localStorage.setItem(KEY, '1'); } catch (err) {}
-    }
 
     function stopTypeOnly() {
       if (typeTimer) { clearInterval(typeTimer); typeTimer = null; }
@@ -379,9 +374,8 @@
     [spotlight, cursor, card].forEach(function (n) { n.style.position = 'fixed'; });
     // Bubble is positioned by JS next to where the cursor points
 
-    function start(isAuto) {
+    function start() {
       active = true;
-      if (isAuto) markSeen(); // played once — never auto-repeat, not annoying
       overlay.classList.add('active');
       overlay.setAttribute('aria-hidden', 'false');
       if (navMenu) { navMenu.classList.remove('active'); }
@@ -398,7 +392,6 @@
       overlay.setAttribute('aria-hidden', 'true');
       card.classList.remove('show-bubble');
       document.querySelectorAll('.tour-target').forEach(function (n) { n.classList.remove('tour-target'); });
-      markSeen();
     }
 
     // Tap the bubble to continue (game-style) — first tap completes the
@@ -429,17 +422,12 @@
     });
     window.addEventListener('resize', function () { if (active) show(idx); });
     if (tourBtn) tourBtn.addEventListener('click', function () {
-      start(false); // manual replay via button only — never automatic again
+      start();
     });
 
-    // Auto-play exactly once per visitor (first site open only)
-    var forceTour = /[?&]tour=1/.test(window.location.search);
-    var seen = false;
-    try { seen = !!localStorage.getItem(KEY); } catch (err) {}
-    if (forceTour) {
-      setTimeout(function () { start(false); }, 900);
-    } else if (!seen) {
-      setTimeout(function () { start(true); }, 900);
+    // Auto-play on every site open (?tour=0 disables it, for testing)
+    if (!/[?&]tour=0/.test(window.location.search)) {
+      setTimeout(start, 900);
     }
   })();
 
