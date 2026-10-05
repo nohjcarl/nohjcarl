@@ -3,387 +3,398 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jhon Carl J. Ayuda</title>
-
-  
- <link rel="stylesheet" href="style.css" />
-
-  
+  <title>Jhon Carl Ayuda — Front-End Developer & UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Jhon Carl J. Ayuda, Information Technology student at Holy Cross of Davao College. Front-End Developer & UI/UX Designer specializing in responsive web, React Native, and Firebase." />
+  <meta name="theme-color" content="#0B0F19" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50' y='68' font-size='48' text-anchor='middle' fill='white' font-family='Arial' font-weight='bold'>JA</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
 </head>
 
 <body>
-
-  
-  <nav>
-    <h2 class="logo">Carpe diem.</h2>
-
-    <button class="menu-toggle" id="menuToggle">
+  <nav id="navbar">
+    <a href="#top" class="logo">JC Ayuda<span>.</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
-
     <ul id="navMenu">
-    
+      <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#certificates">Certificates</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#gallery">Community</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="nav-cta"><a href="ayuda.pdf" download class="btn btn-small"><i class="fas fa-download"></i> CV</a></li>
+      <li class="nav-cta"><button id="tourBtn" class="btn btn-small btn-ghost" type="button"><i class="fas fa-route"></i> Tour</button></li>
     </ul>
-
-
   </nav>
 
-  
-  <section class="hero">
-    
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="thorfinn.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <div class="hero-content">
-      <h1>Hi, I'm <span>Jhon</span></h1>
-      <p>Front-end Developer & UI/UX Designer</p>
-      <a href="ayuda.pdf" download class="cv-link">Download CV</a>      <div class="hero-links">
-       
-        <div class="contact-icons">
-          
-          <a class="contact-meta" href="https://github.com/nohjcarl" target="_blank" aria-label="GitHub">
-            <span class="contact-meta-icon"><i class="fab fa-github"></i></span>
-          </a>
-          <a class="contact-meta" href="https://www.facebook.com/jhoncarl.ayuda" target="_blank" aria-label="Facebook">
-            <span class="contact-meta-icon"><i class="fab fa-facebook-f"></i></span>
-          </a>
-          <a class="contact-meta" href="https://www.instagram.com/nohjlrac_/" target="_blank" aria-label="Instagram">
-            <span class="contact-meta-icon"><i class="fab fa-instagram"></i></span>
-          </a>
-          <a class="contact-meta" href="https://www.linkedin.com/in/jhoncarl-ayuda-a702823a9/" target="_blank" aria-label="LinkedIn">
-            <span class="contact-meta-icon"><i class="fab fa-linkedin-in"></i></span>
-          </a>
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="status-badge"><span class="pulse-dot"></span> Open to internships & freelance</div>
+        <h1>Jhon Carl <span>Ayuda</span></h1>
+        <p class="role">Front-End Developer & UI/UX Designer</p>
+        <p class="hero-desc">
+          IT student at Holy Cross of Davao College building responsive websites,
+          intuitive interfaces, and cross-platform mobile apps with React Native & Firebase.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+          <a href="ayuda.pdf" download class="btn btn-ghost"><i class="fas fa-download"></i> Download CV</a>
         </div>
-      </div>    </div>
-    <div class="hero-image">
-      <img src="pic1.png" alt="Jhon Carl J Ayuda" class="profile-pic">
+        <div class="hero-stats">
+          <div><strong>3</strong><span>Featured projects</span></div>
+          <div><strong>5</strong><span>Certificates</span></div>
+          <div><strong>10+</strong><span>Tools & tech</span></div>
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/nohjcarl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/jhoncarl-ayuda-a702823a9/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/jhoncarl.ayuda" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/nohjlrac_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="mailto:jc15ayuda@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="profile-card">
+          <div class="profile-media" id="profileMedia" tabindex="0" aria-label="Profile photo">
+            <img src="pic1.png" alt="Portrait of Jhon Carl Ayuda" class="profile-pic" />
+            <video id="profileVideo" class="profile-video" src="thorfinn.mp4" muted loop playsinline preload="metadata"></video>
+          </div>
+          <div class="profile-info">
+            <strong>Jhon Carl J. Ayuda</strong>
+            <span>Davao City, Philippines</span>
+          </div>
+          <div class="float-badge badge-top"><i class="fas fa-code"></i> Clean, responsive code</div>
+          <div class="float-badge badge-bottom"><i class="fas fa-mobile-alt"></i> Web + Mobile</div>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
-  
- 
+  <main>
+    <!-- ABOUT -->
+    <section id="about" class="fade">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img src="pic.jpg" alt="Jhon Carl Ayuda casual photo" loading="lazy" />
+        </div>
+        <div>
+          <p class="eyebrow">About me</p>
+          <h2>Building practical, user-focused digital products</h2>
+          <p class="lead">
+            I'm an Information Technology student focused on front-end development and UI/UX.
+            I turn ideas into accessible, mobile-first websites and cross-platform apps —
+            from wireframe to Firebase-backed deployment.
+          </p>
+          <ul class="check-list">
+            <li><i class="fas fa-check"></i> Responsive HTML / CSS / JavaScript websites</li>
+            <li><i class="fas fa-check"></i> UI wireframes & interaction design in Figma</li>
+            <li><i class="fas fa-check"></i> React Native + Expo mobile apps with Firebase Auth & Firestore</li>
+          </ul>
+          <div class="info-grid">
+            <div><span>Education</span><strong>BS IT — Holy Cross of Davao College</strong></div>
+            <div><span>Location</span><strong>Davao City, Philippines</strong></div>
+            <div><span>Email</span><strong><a href="mailto:jc15ayuda@gmail.com">jc15ayuda@gmail.com</a></strong></div>
+            <div><span>Focus</span><strong>Front-End • UI/UX • Mobile</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    
-  <section id="experience" class="fade">
-  <h2>Experience</h2>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="fade">
+      <div class="container">
+        <p class="eyebrow">What I do</p>
+        <h2>Experience & Capabilities</h2>
+        <p class="section-sub">Hands-on academic and self-directed work across web, mobile, and backend integration.</p>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Front-End Developer</h3>
+            <p>Responsive websites with HTML, CSS, and JavaScript. Modern layouts, animations, and mobile-first principles for usability and accessibility.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-pen-ruler"></i></div>
+            <h3>UI/UX Designer & Developer</h3>
+            <p>Wireframes and interfaces focused on clean design and intuitive navigation. Optimized typography, layout, and flow for engagement.</p>
+            <div class="tags"><span>Figma</span><span>UI Design</span><span>Prototyping</span></div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>React Native Mobile Developer</h3>
+            <p>Cross-platform apps with React Native and Expo. Firebase Authentication, Firestore CRUD, media uploads, and real-time data.</p>
+            <div class="tags"><span>React Native</span><span>Expo</span><span>Firestore</span></div>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-database"></i></div>
+            <h3>Full-Stack Firebase Integration</h3>
+            <p>Connected front-ends to Firebase backend services — auth, database design, and cloud storage with secure, scalable performance.</p>
+            <div class="tags"><span>Firebase Auth</span><span>Firestore</span><span>Storage</span></div>
+          </div>
+        </div>
 
-  <div class="grid">
+        <div class="tech-stack">
+          <h3>Tech Stack</h3>
+          <div class="tech-grid">
+            <div class="tech-category">
+              <h4>Frontend</h4>
+              <div class="tech-icons">
+                <div class="tech-icon"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="tech-icon"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="tech-icon"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
+                <div class="tech-icon"><i class="fab fa-react"></i><span>React</span></div>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4>Mobile & Backend</h4>
+              <div class="tech-icons">
+                <div class="tech-icon"><i class="fab fa-react"></i><span>React Native</span></div>
+                <div class="tech-icon"><i class="fas fa-mobile-alt"></i><span>Expo</span></div>
+                <div class="tech-icon"><i class="fas fa-database"></i><span>Firebase</span></div>
+              </div>
+            </div>
+            <div class="tech-category">
+              <h4>Tools</h4>
+              <div class="tech-icons">
+                <div class="tech-icon"><i class="fab fa-git-alt"></i><span>Git</span></div>
+                <div class="tech-icon"><i class="fab fa-github"></i><span>GitHub</span></div>
+                <div class="tech-icon"><i class="fas fa-code"></i><span>VS Code</span></div>
+                <div class="tech-icon"><i class="fab fa-figma"></i><span>Figma</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="card">
-      <h3>Front-End Developer</h3>
-      <p>
-        Designed and developed responsive websites using HTML, CSS, and JavaScript.
-        Implemented modern layouts, animations, and mobile-first design principles
-        to improve usability and accessibility across devices.
-      </p>
+    <!-- PROJECTS -->
+    <section id="projects" class="fade">
+      <div class="container">
+        <p class="eyebrow">Selected work</p>
+        <h2>Projects</h2>
+        <p class="section-sub">Academic and personal projects — designed, built, and deployed.</p>
+        <div class="grid grid-3">
+          <article class="project-card">
+            <div class="project-media"><img src="adv.png" alt="Cebu-Bohol Educational Tour website screenshot" loading="lazy" /></div>
+            <div class="project-body">
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+              <h3>Cebu–Bohol Educ Tour</h3>
+              <p>Educational tour site for Cebu and Bohol with interactive itineraries. Final requirement for ADV subject.</p>
+              <div class="project-links">
+                <a href="https://adveduc-3h3a.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-media"><img src="tele.png" alt="Telegram-style chat app screenshot" loading="lazy" /></div>
+            <div class="project-body">
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+              <h3>Telegram-Style Chat App</h3>
+              <p>Self-made project mimicking the Telegram interface — send and receive messages in a chat-like environment.</p>
+              <div class="project-links">
+                <a href="https://ayudaportfolio-6x4x.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-media"><img src="baca.png" alt="Pool reservation system screenshot" loading="lazy" /></div>
+            <div class="project-body">
+              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+              <h3>Luxuria Bacaca Pool Reservation</h3>
+              <p>Online pool-slot booking with availability view and reservation management. Group IM final project.</p>
+              <div class="project-links">
+                <a href="https://pool-reservation.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
+    <section id="certificates" class="fade">
+      <div class="container">
+        <p class="eyebrow">Credentials</p>
+        <h2>Certificates</h2>
+        <p class="section-sub">Click any certificate to view it in full. Verified issuers and dates below.</p>
+        <div class="grid grid-cert">
+          <article class="cert-card">
+            <button class="cert-media" data-full="certgd.jpg" aria-label="View Build with AI certificate">
+              <img src="certgd.jpg" alt="Build with AI 2026 Certificate of Appreciation" loading="lazy" />
+            </button>
+            <div class="cert-body">
+              <h3>Build with AI 2026</h3>
+              <p>Google Developer Group Davao • Certificate of Appreciation</p>
+              <span class="cert-date">May 16, 2026</span>
+            </div>
+          </article>
+          <article class="cert-card">
+            <button class="cert-media" data-full="cisco.png" aria-label="View Cisco certificate">
+              <img src="cisco.png" alt="Cisco Computer Hardware Basics certificate" loading="lazy" />
+            </button>
+            <div class="cert-body">
+              <h3>Computer Hardware Basics</h3>
+              <p>Cisco Networking Academy</p>
+              <span class="cert-date">Dec 08, 2025</span>
+            </div>
+          </article>
+          <article class="cert-card">
+            <button class="cert-media" data-full="educ.jpg" aria-label="View educational tour certificate">
+              <img src="educ.jpg" alt="Cebu-Bohol Educational Tour certificate of completion" loading="lazy" />
+            </button>
+            <div class="cert-body">
+              <h3>Educational Tour — Cebu & Bohol</h3>
+              <p>World of Adventures Travel and Tours • Certificate of Completion</p>
+              <span class="cert-date">Nov 19–22, 2025</span>
+            </div>
+          </article>
+          <article class="cert-card">
+            <button class="cert-media" data-full="IM.png" aria-label="View Information Management certificate">
+              <img src="IM.png" alt="CodeChum Information Management certificate" loading="lazy" />
+            </button>
+            <div class="cert-body">
+              <h3>Information Management</h3>
+              <p>CodeChum • CC105-2B — Score 1064/1130</p>
+              <span class="cert-date">May 15, 2025</span>
+            </div>
+          </article>
+          <article class="cert-card">
+            <button class="cert-media" data-full="k12.png" aria-label="View Gemini Certified Student certificate">
+              <img src="k12.png" alt="Gemini Certified Student K12 certificate" loading="lazy" />
+            </button>
+            <div class="cert-body">
+              <h3>Gemini Certified Student — K12</h3>
+              <p>Google for Education</p>
+              <span class="cert-date">Issued May 23, 2026 • Valid thru 2029</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section id="gallery" class="fade">
+      <div class="container">
+        <p class="eyebrow">Beyond the code</p>
+        <h2>Community & Events</h2>
+        <p class="section-sub">Active in the local tech community — GDG Davao Build with AI 2026 & AWS Community Day Davao 2026.</p>
+        <div class="gallery gallery-carousel">
+          <button class="gallery-nav prev" aria-label="Previous photos"><i class="fas fa-chevron-left"></i></button>
+          <div class="gallery-scroll">
+            <figure class="gallery-card"><img src="gdg1.jpg" alt="Collaborating with peers at GDG Build with AI Davao" loading="lazy" /><figcaption>GDG Davao — Build with AI</figcaption></figure>
+            <figure class="gallery-card"><img src="gdg2.jpg" alt="GDG Davao event photo 2" loading="lazy" /><figcaption>Hands-on session</figcaption></figure>
+            <figure class="gallery-card"><img src="gdg3.jpg" alt="GDG Davao event photo 3" loading="lazy" /><figcaption>Community learning</figcaption></figure>
+            <figure class="gallery-card"><img src="gdg4.jpg" alt="GDG Davao event photo 4" loading="lazy" /><figcaption>Tech community</figcaption></figure>
+            <figure class="gallery-card"><img src="gdg5.jpg" alt="GDG Davao event photo 5" loading="lazy" /><figcaption>Networking</figcaption></figure>
+            <figure class="gallery-card"><img src="gdg6.jpg" alt="GDG Davao event photo 6" loading="lazy" /><figcaption>Workshop</figcaption></figure>
+            <figure class="gallery-card"><img src="gdg7.jpg" alt="GDG Davao event photo 7" loading="lazy" /><figcaption>Build with AI 2026</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS1.jpg" alt="AWS Community Day Davao 2026 stage" loading="lazy" /><figcaption>AWS Community Day Davao 2026</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS2.jpg" alt="AWS Community Day participant badge - Jhon" loading="lazy" /><figcaption>Participant badge</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS3.jpg" alt="AWS talk - cloud career session" loading="lazy" /><figcaption>Cloud career talk</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS4.jpg" alt="AWS Community Day Philippines swag and shirt" loading="lazy" /><figcaption>Event swag kit</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS5.jpg" alt="AWS Community Day Davao 2026 session" loading="lazy" /><figcaption>AWS session</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS6.jpg" alt="AWS Community Day swag close-up" loading="lazy" /><figcaption>Swag close-up</figcaption></figure>
+          </div>
+          <button class="gallery-nav next" aria-label="Next photos"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="fade">
+      <div class="container">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Let's work together</h2>
+        <p class="section-sub">Have a project, internship, or collaboration in mind? Send a message — I reply within 1–2 days.</p>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <span class="contact-ic"><i class="fas fa-envelope"></i></span>
+              <div><span>Email</span><a href="mailto:jc15ayuda@gmail.com">jc15ayuda@gmail.com</a></div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-ic"><i class="fas fa-location-dot"></i></span>
+              <div><span>Location</span><strong>Davao City, Philippines</strong></div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-ic"><i class="fas fa-graduation-cap"></i></span>
+              <div><span>Education</span><strong>Holy Cross of Davao College — BS IT</strong></div>
+            </div>
+            <div class="contact-icons">
+              <a href="https://github.com/nohjcarl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://www.linkedin.com/in/jhoncarl-ayuda-a702823a9/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.facebook.com/jhoncarl.ayuda" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/nohjlrac_/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+          <form id="contactForm" class="contact-form" novalidate>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@company.com" required autocomplete="email" />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project, timeline, and goals" required></textarea>
+            <div class="contact-actions">
+              <button type="submit" class="btn btn-primary" id="sendBtn">Send Message</button>
+              <button type="button" class="btn btn-ghost" id="contactClear">Clear</button>
+            </div>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#top" class="logo">JC Ayuda<span>.</span></a>
+      <p>© <span id="year">2026</span> Jhon Carl Ayuda. Designed & built with care.</p>
+      <button id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
     </div>
+  </footer>
 
-    <div class="card">
-      <h3>UI/UX Designer & Developer</h3>
-      <p>
-        Created wireframes and user interfaces focused on clean design and intuitive
-        navigation. Improved user experience by optimizing layouts, typography,
-        and interaction flow for better engagement.
-      </p>
+  <div id="tourOverlay" class="tour-overlay game" aria-hidden="true">
+    <div id="tourSpotlight" class="tour-spotlight"></div>
+    <div id="tourCursor" class="tour-cursor" aria-hidden="true"><i class="fas fa-mouse-pointer"></i><span class="tour-click"></span></div>
+    <div id="tourCard" class="tour-card game-box" role="dialog" aria-live="polite" aria-label="Site tour">
+      <span class="game-name">Jhon</span>
+      <p id="tourText" class="game-text"></p>
+      <span class="game-next-hint" id="tourHint">▼ tap to continue</span>
+      <div class="game-row">
+        <span id="tourStep" class="tour-step"></span>
+        <div id="tourDots" class="tour-dots"></div>
+      </div>
+      <h3 id="tourTitle" class="sr-only"></h3>
+      <div class="tour-actions game-actions">
+        <button id="tourSkip" class="btn btn-ghost btn-small" type="button">Skip</button>
+        <button id="tourBack" class="btn btn-ghost btn-small" type="button">◀ Back</button>
+        <button id="tourNext" class="btn btn-primary btn-small" type="button">Next ▶</button>
+      </div>
+      <label class="tour-remember"><input type="checkbox" id="tourDontShow" /> Don't auto-show again</label>
     </div>
-
-    <div class="card">
-      <h3>React Native Mobile Developer</h3>
-      <p>
-        Built cross-platform mobile applications with React Native and Expo.
-        Integrated Firebase Authentication, Firestore CRUD operations, media uploads,
-        and real-time data handling for dynamic app functionality.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Full-Stack Firebase Integration</h3>
-      <p>
-        Connected front-end interfaces to backend services using Firebase.
-        Managed authentication, database design, and cloud storage while ensuring
-        secure and scalable application performance.
-      </p>
-    </div>
-
   </div>
-</section>
 
-    <div class="tech-stack">
-      <h3>Tech Stack</h3>
-      
-      <div class="tech-category">
-        <h4>Frontend</h4>
-        <div class="tech-icons">
-          <div class="tech-icon" title="HTML5">
-            <i class="fab fa-html5"></i>
-            <span>HTML</span>
-          </div>
-          <div class="tech-icon" title="CSS3">
-            <i class="fab fa-css3-alt"></i>
-            <span>CSS</span>
-          </div>
-          <div class="tech-icon" title="JavaScript">
-            <i class="fab fa-js-square"></i>
-            <span>JavaScript</span>
-          </div>
-          <div class="tech-icon" title="React">
-            <i class="fab fa-react"></i>
-            <span>React</span>
-          </div>
-          <div class="tech-icon" title="Next.js">
-            <i class="fab fa-react"></i>
-            <span>Next.js</span>
-          </div>
-          <div class="tech-icon" title="Tailwind">
-            <i class="fab fa-css3-alt"></i>
-            <span>Tailwind</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tech-category">
-        <h4>Mobile</h4>
-        <div class="tech-icons">
-          <div class="tech-icon" title="React Native">
-            <i class="fab fa-react"></i>
-            <span>React Native</span>
-          </div>
-          <div class="tech-icon" title="Expo">
-            <i class="fas fa-mobile-alt"></i>
-            <span>Expo</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tech-category">
-        <h4>Backend</h4>
-        <div class="tech-icons">
-          <div class="tech-icon" title="Firebase">
-            <i class="fas fa-database"></i>
-            <span>Firebase</span>
-          </div>
-          <div class="tech-icon" title="Firestore">
-            <i class="fas fa-database"></i>
-            <span>Firestore</span>
-          </div>
-        </div>
-      </div>
-      
-      <div class="tech-category">
-        <h4>Tools</h4>
-        <div class="tech-icons">
-          <div class="tech-icon" title="Git">
-            <i class="fab fa-git-alt"></i>
-            <span>Git</span>
-          </div>
-          <div class="tech-icon" title="GitHub">
-            <i class="fab fa-github"></i>
-            <span>GitHub</span>
-          </div>
-          <div class="tech-icon" title="VS Code">
-            <i class="fas fa-code"></i>
-            <span>VS Code</span>
-          </div>
-          <div class="tech-icon" title="Figma">
-            <i class="fab fa-figma"></i>
-            <span>Figma</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  
-  <section id="certificates" class="fade">
-    <h2>Certificates</h2>
-
-    <div class="gallery">
-      <img src="educ.jpg" alt="">
-      <img src="certgd.jpg" alt="">
-      <img src="cisco.png" alt="">
-      <img src="IM.png" alt="">
-      <img src="k12.png" alt="">
-    </div>
-  </section>
-
-  
-  <section id="projects" class="fade">
-    <h2>Projects</h2>
-
-    <div class="projects-slideshow">
-      <div class="slideshow-container">
-        
-        <div class="project-slide fade-slide">
-          <div class="slide-image">
-            <img src="adv.png" alt="eductour">
-          </div>
-          <div class="slide-content">
-            <h3>CEBU-BOHOL EDUC TOUR</h3>
-            <p class="tech-tags">HTML • CSS • JS</p>
-            <p>
-              Educational tour website for Cebu and Bohol, featuring interactive itineraries,and the final requirment for our ADV subject.
-            </p>
-            <div class="project-links">
-              
-              <a href="https://adveduc-3h3a.vercel.app/" target="_blank" class="project-btn demo">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="project-slide fade-slide">
-          <div class="slide-image">
-            <img src="tele.png" alt="Quiz App">
-          </div>
-          <div class="slide-content">
-            <h3>Telegram Chat App</h3>
-            <p class="tech-tags">HTML • CSS • JS</p>
-            <p>
-              Interactive Telegram Chat App. A self made project that mimics the Telegram interface, allowing users to send and receive messages in a chat-like environment.
-            </p>
-            <div class="project-links">
-              
-              </a>
-              <a href="https://ayudaportfolio-6x4x.vercel.app/" target="_blank" class="project-btn demo">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="project-slide fade-slide">
-          <div class="slide-image">
-            <img src="baca.png" alt="Pool reservation system">
-          </div>
-          <div class="slide-content">
-            <h3>Pool Reservation System For Luxuria Bacaca Resort</h3>
-            <p class="tech-tags">HTML • CSS • JS</p>
-            <p>
-             A pool reservation system designed for Luxuria Bacaca Resort, allowing users to book pool slots online, view availability, and manage their reservations efficiently Our IM Final Project as a Group.
-            </p>
-            <div class="project-links">
-              
-              <a href="https://pool-reservation.vercel.app/" target="_blank" class="project-btn demo">
-                <i class="fas fa-external-link-alt"></i> Live Demo
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
-      <button class="slide-btn prev" id="prevBtn" onclick="changeSlide(-1)">
-        <i class="fas fa-chevron-left"></i>
-      </button>
-      <button class="slide-btn next" id="nextBtn" onclick="changeSlide(1)">
-        <i class="fas fa-chevron-right"></i>
-      </button>
-
-     
-      <div class="slide-dots">
-        <span class="dot active" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-    </div>
-  </section>
-
-  <section id="gallery" class="fade">
-    <h2>Gallery</h2>
-    <div class="gallery gallery-carousel">
-      <button class="gallery-nav prev" aria-label="Previous gallery images"><i class="fas fa-chevron-left"></i></button>
-      <div class="gallery-scroll">
-        <div class="gallery-card"><img src="gdg1.jpg" alt="Gallery image 1"></div>
-        <div class="gallery-card"><img src="gdg2.jpg" alt="Gallery image 2"></div>
-        <div class="gallery-card"><img src="gdg3.jpg" alt="Gallery image 3"></div>
-        <div class="gallery-card"><img src="gdg4.jpg" alt="Gallery image 3"></div>
-        <div class="gallery-card"><img src="gdg5.jpg" alt="Gallery image 3"></div>
-        <div class="gallery-card"><img src="gdg6.jpg" alt="Gallery image 3"></div>
-        <div class="gallery-card"><img src="gdg7.jpg" alt="Gallery image 3"></div>
-        
-        
-      </div>
-      <button class="gallery-nav next" aria-label="Next gallery images"><i class="fas fa-chevron-right"></i></button>
-    </div>
-  </section>
-
-  
-  <section id="contact" class="fade">
-    <h2>Contact</h2>
-
-    <div class="contact-container">
-      <div class="contact-info">
-        <p class="contact-lead">Get in touch</p>
-        <div class="contact-icons">
-          <a class="contact-meta" href="mailto:jc15ayuda@gmail.com" aria-label="Email">
-            <span class="contact-meta-icon"><i class="fas fa-envelope"></i></span>
-          </a>
-          <a class="contact-meta" href="https://github.com/nohjcarl" target="_blank" aria-label="GitHub">
-            <span class="contact-meta-icon"><i class="fab fa-github"></i></span>
-          </a>
-          <a class="contact-meta" href="https://www.facebook.com/jhoncarl.ayuda" target="_blank" aria-label="Facebook">
-            <span class="contact-meta-icon"><i class="fab fa-facebook-f"></i></span>
-          </a>
-          <a class="contact-meta" href="https://www.instagram.com/nohjlrac_/" target="_blank" aria-label="Instagram">
-            <span class="contact-meta-icon"><i class="fab fa-instagram"></i></span>
-          </a>
-          <a class="contact-meta" href="https://www.linkedin.com/in/jhoncarl-ayuda-a702823a9/" target="_blank" aria-label="LinkedIn">
-            <span class="contact-meta-icon"><i class="fab fa-linkedin-in"></i></span>
-          </a>
-        </div>
-      </div>
-
-      <form id="contactForm" class="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@company.com" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
-
-        <div class="contact-actions">
-          <button type="submit" class="contact-btn">Send Message</button>
-          <button type="button" class="contact-btn ghost" id="contactClear">Clear</button>
-        </div>
-       
-      </form>
-    </div>
-  </section>
-
-  <footer>© 2026 Jhon Carl Ayuda. All rights reserved.</footer>
-  
-  <div id="modal" class="modal">
-    <span id="close">&times;</span>
-    <img id="modalImg">
+  <div id="modal" class="modal" aria-hidden="true">
+    <span id="close" role="button" aria-label="Close viewer">&times;</span>
+    <button id="modalPrev" class="modal-nav prev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+    <figure class="modal-figure">
+      <img id="modalImg" alt="Expanded view" />
+      <figcaption id="modalCaption"></figcaption>
+    </figure>
+    <button id="modalNext" class="modal-nav next" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+    <div id="modalCounter" class="modal-counter" aria-live="polite"></div>
   </div>
-
-  
-  
-  <audio id="bgMusic" src="drag.MP3" autoplay loop muted></audio>
-
-  <!-- mute/unmute control (fixed corner button) -->
-  <button id="muteBtn" class="mute-btn" aria-label="Toggle background music">
-    <i class="fas fa-volume-mute"></i>
-  </button>
 
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script src="script.js"></script>
-  
 </body>
 </html>
