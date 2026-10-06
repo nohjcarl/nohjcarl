@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -10,29 +10,36 @@
   <link rel="apple-touch-icon" href="pic1.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script>
+    try{var t=localStorage.getItem('jc_theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}
+  </script>
 </head>
 
 <body>
   <nav id="navbar">
     <a href="#top" class="logo">JC Ayuda<span>.</span></a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
     <ul id="navMenu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#gallery">Community</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li class="nav-cta"><a href="ayuda.pdf" download class="btn btn-small"><i class="fas fa-download"></i> CV</a></li>
-      <li class="nav-cta"><button id="tourBtn" class="btn btn-small btn-ghost" type="button"><i class="fas fa-route"></i> Tour</button></li>
+      <li><a href="#about"><span class="nav-index">01</span>About</a></li>
+      <li><a href="#experience"><span class="nav-index">02</span>Experience</a></li>
+      <li><a href="#stack"><span class="nav-index">03</span>Stack</a></li>
+      <li><a href="#projects"><span class="nav-index">04</span>Projects</a></li>
+      <li><a href="#certificates"><span class="nav-index">05</span>Certificates</a></li>
+      <li><a href="#gallery"><span class="nav-index">06</span>Community</a></li>
+      <li><a href="#contact"><span class="nav-index">07</span>Contact</a></li>
     </ul>
+    <div class="nav-actions">
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch to light mode">
+        <i class="fas fa-moon"></i>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
 
   <!-- HERO -->
@@ -52,8 +59,8 @@
         </div>
         <div class="hero-stats">
           <div><strong>3</strong><span>Featured projects</span></div>
-          <div><strong>5</strong><span>Certificates</span></div>
-          <div><strong>10+</strong><span>Tools & tech</span></div>
+          <div><strong>4</strong><span>Certificates</span></div>
+          <div><strong>35+</strong><span>Tools & tech</span></div>
         </div>
         <div class="hero-social">
           <a href="https://github.com/nohjcarl" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -65,20 +72,19 @@
       </div>
       <div class="hero-visual">
         <div class="profile-card">
-          <div class="profile-media" id="profileMedia" tabindex="0" aria-label="Profile photo">
-            <img src="pic1.png" alt="Portrait of Jhon Carl Ayuda" class="profile-pic" />
-            <video id="profileVideo" class="profile-video" src="thorfinn.mp4" muted loop playsinline preload="metadata"></video>
-          </div>
+          <img src="pic1.png" alt="Portrait of Jhon Carl Ayuda" class="profile-pic" />
           <div class="profile-info">
             <strong>Jhon Carl J. Ayuda</strong>
             <span>Davao City, Philippines</span>
           </div>
-          <div class="float-badge badge-top"><i class="fas fa-code"></i> Clean, responsive code</div>
-          <div class="float-badge badge-bottom"><i class="fas fa-mobile-alt"></i> Web + Mobile</div>
         </div>
       </div>
     </div>
   </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track"><span>HTML · CSS · JavaScript · TypeScript · Python · React · Next.js · React Native · Expo · Expo Router · Tailwind CSS · Framer Motion · Three.js · Responsive Design · Django REST · Node.js · FastAPI · REST APIs · JWT · Twilio SMS · Firebase · Firestore · MySQL · Prisma ORM · Schema Design · Google Cloud · SQL Injection Prevention · SHA-256 Logging · SSH Keys · Subnetting · Postman · Vercel · Git · GitHub · Figma · Canva · UI/UX Design · </span><span>HTML · CSS · JavaScript · TypeScript · Python · React · Next.js · React Native · Expo · Expo Router · Tailwind CSS · Framer Motion · Three.js · Responsive Design · Django REST · Node.js · FastAPI · REST APIs · JWT · Twilio SMS · Firebase · Firestore · MySQL · Prisma ORM · Schema Design · Google Cloud · SQL Injection Prevention · SHA-256 Logging · SSH Keys · Subnetting · Postman · Vercel · Git · GitHub · Figma · Canva · UI/UX Design · </span></div>
+  </div>
 
   <main>
     <!-- ABOUT -->
@@ -143,34 +149,80 @@
           </div>
         </div>
 
-        <div class="tech-stack">
-          <h3>Tech Stack</h3>
-          <div class="tech-grid">
-            <div class="tech-category">
-              <h4>Frontend</h4>
-              <div class="tech-icons">
-                <div class="tech-icon"><i class="fab fa-html5"></i><span>HTML5</span></div>
-                <div class="tech-icon"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
-                <div class="tech-icon"><i class="fab fa-js-square"></i><span>JavaScript</span></div>
-                <div class="tech-icon"><i class="fab fa-react"></i><span>React</span></div>
-              </div>
+    </section>
+
+    <!-- STACK -->
+    <section id="stack" class="fade">
+      <div class="container">
+        <p class="eyebrow">Tech Stack</p>
+        <h2>What I work with.</h2>
+        <p class="section-sub">Languages, frameworks, and tools I've used in my projects.</p>
+        <div class="stack-grid">
+          <div class="stack-group">
+            <p class="stack-label"><span>01</span> Languages</p>
+            <div class="stack-chips">
+              <span class="stack-chip"><i class="fab fa-html5"></i>HTML</span>
+              <span class="stack-chip"><i class="fab fa-css3-alt"></i>CSS</span>
+              <span class="stack-chip"><i class="fab fa-square-js"></i>JavaScript</span>
+              <span class="stack-chip"><span class="mono">TS</span>TypeScript</span>
+              <span class="stack-chip"><i class="fab fa-python"></i>Python</span>
             </div>
-            <div class="tech-category">
-              <h4>Mobile & Backend</h4>
-              <div class="tech-icons">
-                <div class="tech-icon"><i class="fab fa-react"></i><span>React Native</span></div>
-                <div class="tech-icon"><i class="fas fa-mobile-alt"></i><span>Expo</span></div>
-                <div class="tech-icon"><i class="fas fa-database"></i><span>Firebase</span></div>
-              </div>
+          </div>
+          <div class="stack-group">
+            <p class="stack-label"><span>02</span> Frontend &amp; Mobile</p>
+            <div class="stack-chips">
+              <span class="stack-chip"><i class="fab fa-react"></i>React</span>
+              <span class="stack-chip"><span class="mono">N</span>Next.js</span>
+              <span class="stack-chip"><i class="fab fa-react"></i>React Native</span>
+              <span class="stack-chip"><span class="mono">EX</span>Expo</span>
+              <span class="stack-chip"><span class="mono">ER</span>Expo Router</span>
+              <span class="stack-chip"><span class="mono">Tw</span>Tailwind CSS</span>
+              <span class="stack-chip"><span class="mono">FM</span>Framer Motion</span>
+              <span class="stack-chip"><span class="mono">3JS</span>Three.js</span>
+              <span class="stack-chip"><i class="fas fa-mobile-screen"></i>Responsive Design</span>
             </div>
-            <div class="tech-category">
-              <h4>Tools</h4>
-              <div class="tech-icons">
-                <div class="tech-icon"><i class="fab fa-git-alt"></i><span>Git</span></div>
-                <div class="tech-icon"><i class="fab fa-github"></i><span>GitHub</span></div>
-                <div class="tech-icon"><i class="fas fa-code"></i><span>VS Code</span></div>
-                <div class="tech-icon"><i class="fab fa-figma"></i><span>Figma</span></div>
-              </div>
+          </div>
+          <div class="stack-group">
+            <p class="stack-label"><span>03</span> Backend &amp; APIs</p>
+            <div class="stack-chips">
+              <span class="stack-chip"><span class="mono">dj</span>Django REST</span>
+              <span class="stack-chip"><i class="fab fa-node-js"></i>Node.js</span>
+              <span class="stack-chip"><span class="mono">FA</span>FastAPI</span>
+              <span class="stack-chip"><span class="mono">API</span>REST APIs</span>
+              <span class="stack-chip"><span class="mono">JWT</span>JWT</span>
+              <span class="stack-chip"><i class="fas fa-comment-sms"></i>Twilio SMS</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <p class="stack-label"><span>04</span> Databases</p>
+            <div class="stack-chips">
+              <span class="stack-chip"><i class="fas fa-fire"></i>Firebase</span>
+              <span class="stack-chip"><span class="mono">FS</span>Firestore</span>
+              <span class="stack-chip"><span class="mono">My</span>MySQL</span>
+              <span class="stack-chip"><span class="mono">Pr</span>Prisma ORM</span>
+              <span class="stack-chip"><i class="fas fa-database"></i>Schema Design</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <p class="stack-label"><span>05</span> Cloud &amp; Security</p>
+            <div class="stack-chips">
+              <span class="stack-chip"><i class="fab fa-google"></i>Google Cloud</span>
+              <span class="stack-chip"><i class="fas fa-shield-halved"></i>SQL Injection Prevention</span>
+              <span class="stack-chip"><i class="fas fa-fingerprint"></i>SHA-256 Logging</span>
+              <span class="stack-chip"><i class="fas fa-key"></i>SSH Keys</span>
+              <span class="stack-chip"><i class="fas fa-network-wired"></i>Subnetting</span>
+            </div>
+          </div>
+          <div class="stack-group">
+            <p class="stack-label"><span>06</span> Design &amp; Tools</p>
+            <div class="stack-chips">
+              <span class="stack-chip"><i class="fas fa-pen-ruler"></i>UI/UX Design</span>
+              <span class="stack-chip"><i class="fab fa-figma"></i>Figma</span>
+              <span class="stack-chip"><span class="mono">Ca</span>Canva</span>
+              <span class="stack-chip"><span class="mono">Pm</span>Postman</span>
+              <span class="stack-chip"><span class="mono">▲</span>Vercel</span>
+              <span class="stack-chip"><i class="fab fa-git-alt"></i>Git</span>
+              <span class="stack-chip"><i class="fab fa-github"></i>GitHub</span>
             </div>
           </div>
         </div>
@@ -184,36 +236,55 @@
         <h2>Projects</h2>
         <p class="section-sub">Academic and personal projects — designed, built, and deployed.</p>
         <div class="grid grid-3">
-          <article class="project-card">
+          <article class="project-card case">
             <div class="project-media"><img src="adv.png" alt="Cebu-Bohol Educational Tour website screenshot" loading="lazy" /></div>
             <div class="project-body">
-              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+              <p class="case-index">Case study / 01</p>
               <h3>Cebu–Bohol Educ Tour</h3>
+              <p class="case-meta">2025 · Academic project · HTML / CSS / JS</p>
               <p>Educational tour site for Cebu and Bohol with interactive itineraries. Final requirement for ADV subject.</p>
+              <ul class="case-specs">
+                <li>Interactive itineraries across Cebu and Bohol</li>
+                <li>Mobile-first responsive layout</li>
+                <li>Designed and deployed on Vercel</li>
+              </ul>
               <div class="project-links">
                 <a href="https://adveduc-3h3a.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="https://github.com/nohjcarl/adv" target="_blank" rel="noopener" class="btn btn-ghost btn-small"><i class="fab fa-github"></i> Code</a>
               </div>
             </div>
           </article>
-          <article class="project-card">
-            <div class="project-media"><img src="tele.png" alt="Telegram-style chat app screenshot" loading="lazy" /></div>
-            <div class="project-body">
-              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
-              <h3>Telegram-Style Chat App</h3>
-              <p>Self-made project mimicking the Telegram interface — send and receive messages in a chat-like environment.</p>
-              <div class="project-links">
-                <a href="https://ayudaportfolio-6x4x.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-              </div>
-            </div>
-          </article>
-          <article class="project-card">
+          <article class="project-card case">
             <div class="project-media"><img src="baca.png" alt="Pool reservation system screenshot" loading="lazy" /></div>
             <div class="project-body">
-              <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+              <p class="case-index">Case study / 02</p>
               <h3>Luxuria Bacaca Pool Reservation</h3>
+              <p class="case-meta">2025 · Group academic project · HTML / CSS / JS</p>
               <p>Online pool-slot booking with availability view and reservation management. Group IM final project.</p>
+              <ul class="case-specs">
+                <li>Online pool-slot booking flow</li>
+                <li>Availability view and reservation management</li>
+                <li>Built with a group for IM finals</li>
+              </ul>
               <div class="project-links">
                 <a href="https://pool-reservation.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card case">
+            <div class="project-body">
+              <p class="case-index">Case study / 03</p>
+              <h3>To-Do List (React CRUD)</h3>
+              <p class="case-meta">2025 · Academic exercise · React / Context API</p>
+              <p>To-do list app with full CRUD — add items, edit them in place, and delete them, with global state managed through Context and useReducer.</p>
+              <ul class="case-specs">
+                <li>Add, edit, and delete list items</li>
+                <li>Global state via Context + useReducer</li>
+                <li>Edit-in-place update flow</li>
+              </ul>
+              <div class="project-links">
+                <a href="https://todo-list-virid-delta-74.vercel.app" target="_blank" rel="noopener" class="btn btn-primary btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <a href="https://github.com/nohjcarl/advexercise" target="_blank" rel="noopener" class="btn btn-ghost btn-small"><i class="fab fa-github"></i> Code</a>
               </div>
             </div>
           </article>
@@ -246,16 +317,6 @@
               <h3>Computer Hardware Basics</h3>
               <p>Cisco Networking Academy</p>
               <span class="cert-date">Dec 08, 2025</span>
-            </div>
-          </article>
-          <article class="cert-card">
-            <button class="cert-media" data-full="educ.jpg" aria-label="View educational tour certificate">
-              <img src="educ.jpg" alt="Cebu-Bohol Educational Tour certificate of completion" loading="lazy" />
-            </button>
-            <div class="cert-body">
-              <h3>Educational Tour — Cebu & Bohol</h3>
-              <p>World of Adventures Travel and Tours • Certificate of Completion</p>
-              <span class="cert-date">Nov 19–22, 2025</span>
             </div>
           </article>
           <article class="cert-card">
@@ -304,6 +365,9 @@
             <figure class="gallery-card"><img src="AWS4.jpg" alt="AWS Community Day Philippines swag and shirt" loading="lazy" /><figcaption>Event swag kit</figcaption></figure>
             <figure class="gallery-card"><img src="AWS5.jpg" alt="AWS Community Day Davao 2026 session" loading="lazy" /><figcaption>AWS session</figcaption></figure>
             <figure class="gallery-card"><img src="AWS6.jpg" alt="AWS Community Day swag close-up" loading="lazy" /><figcaption>Swag close-up</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS7.jpg" alt="AWS Community Day raffle winners on stage with prizes" loading="lazy" /><figcaption>Raffle winners on stage</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS8.jpg" alt="AWS Community Day attendees checking their phones" loading="lazy" /><figcaption>Attendees at the event</figcaption></figure>
+            <figure class="gallery-card"><img src="AWS9.jpg" alt="Wheel of Names landing on Jhon Carl Ayuda at AWS Community Day" loading="lazy" /><figcaption>Wheel lands on Jhon</figcaption></figure>
           </div>
           <button class="gallery-nav next" aria-label="Next photos"><i class="fas fa-chevron-right"></i></button>
         </div>
@@ -314,7 +378,7 @@
     <section id="contact" class="fade">
       <div class="container">
         <p class="eyebrow">Get in touch</p>
-        <h2>Let's work together</h2>
+        <h2>Let's connect.</h2>
         <p class="section-sub">Have a project, internship, or collaboration in mind? Send a message — I reply within 1–2 days.</p>
         <div class="contact-container">
           <div class="contact-info">
@@ -356,27 +420,26 @@
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <a href="#top" class="logo">JC Ayuda<span>.</span></a>
-      <p>© <span id="year">2026</span> Jhon Carl Ayuda. Designed & built with care.</p>
-      <button id="toTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <span class="footer-label">Site</span>
+        <a href="#top">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-label">Elsewhere</span>
+        <a href="https://github.com/nohjcarl" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/jhoncarl-ayuda-a702823a9/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:jc15ayuda@gmail.com">Email</a>
+        <a href="ayuda.pdf" download>View résumé <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Jhon Carl Ayuda. All rights reserved.</p>
     </div>
   </footer>
-
-  <div id="tourOverlay" class="tour-overlay game" aria-hidden="true">
-    <div id="tourSpotlight" class="tour-spotlight"></div>
-    <div id="tourCursor" class="tour-cursor" aria-hidden="true"><i class="fas fa-mouse-pointer"></i><span class="tour-click"></span></div>
-    <div id="tourCard" class="tour-card game-box" role="dialog" aria-live="polite" aria-label="Site tour">
-      <span class="game-name">Jhon</span>
-      <p id="tourText" class="game-text"></p>
-      <span class="game-next-hint" id="tourHint">▼ tap to continue</span>
-      <div class="game-row">
-        <span id="tourStep" class="tour-step"></span>
-        <div id="tourDots" class="tour-dots"></div>
-      </div>
-      <h3 id="tourTitle" class="sr-only"></h3>
-    </div>
-  </div>
 
   <div id="modal" class="modal" aria-hidden="true">
     <span id="close" role="button" aria-label="Close viewer">&times;</span>
