@@ -341,6 +341,7 @@ footer{border-top:1px solid var(--border);margin-top:20px;background:transparent
   nav ul.active{display:flex}
   nav ul li{width:100%;border-bottom:1px solid rgba(255,255,255,.06)}
   nav ul li a{display:block;padding:14px 4px}
+  .nav-index{display:inline}
   .menu-toggle{display:flex}
   section{padding:64px 0}
   .grid-2,.grid-3,.grid-cert,.stack-grid{grid-template-columns:1fr}
@@ -389,7 +390,7 @@ footer{border-top:1px solid var(--border);margin-top:20px;background:transparent
 
 /* EDITORIAL LAYER — numbered sections, display type, case studies */
 h1,h2,h3,.logo{font-family:'Space Grotesk','Sora','Inter',system-ui,sans-serif}
-.nav-index{font-size:.68rem;font-weight:700;color:var(--primary);margin-right:6px;letter-spacing:.06em}
+.nav-index{display:none;font-size:.68rem;font-weight:700;color:var(--primary);margin-right:6px;letter-spacing:.06em}
 
 /* numbered kickers with hairline rule */
 .eyebrow{display:flex;align-items:center;gap:12px;text-align:left;font-size:.8rem;letter-spacing:.18em}
